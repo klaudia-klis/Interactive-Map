@@ -6,6 +6,7 @@
 
 .state {
     fill: #274f5c;
+    cursor: pointer;
 }
 
 .state:hover {
