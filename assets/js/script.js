@@ -60,6 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(infoBox);
 
     states.forEach(state => {
+        const tooltip = document.getElementById('tooltip');
+         state.addEventListener('mouseover', (event) => {
+            event.preventDefault();
+            const stateId = event.target.getAttribute('data-state');
+            const stateInfo = statesInfo[stateId];
+            if (stateInfo) {
+                tooltip.textContent = stateInfo.name;
+                tooltip.style.display = 'block';
+            }
+        });
+
+        state.addEventListener('mousemove', (event) => {
+            tooltip.style.left = event.pageX + 10 + 'px';
+            tooltip.style.top = event.pageY + 10 + 'px';
+        });
+
+        state.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+        });
         const stateClass = state.getAttribute('class').split(' ').pop();
         state.setAttribute('data-state', stateClass);
         state.addEventListener('click', () => {
@@ -77,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.body.addEventListener('click', (event) => {
+        console.log(event);
         if (event.target.className == 'exit') {
             infoBox.style.display = 'none';
         }

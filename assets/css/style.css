@@ -71,3 +71,13 @@
     text-transform: capitalize;
     cursor: pointer;
 }
+
+#tooltip {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 0.5 solid #e7e7e7;
+    padding: 10px;
+    z-index: 1000;
+    pointer-events: none;
+}
