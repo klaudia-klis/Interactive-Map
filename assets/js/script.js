@@ -55,6 +55,7 @@ const statesInfo = {
 document.addEventListener('DOMContentLoaded', () => {
     const states = document.querySelectorAll('.state path');
     const infoBox = document.createElement('div');
+    const exit = document.querySelector('.exit');
     infoBox.className = 'info-box';
     document.body.appendChild(infoBox);
 
@@ -68,10 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
             infoBox.style.display = 'block';
 
             if (stateData) {
-                infoBox.innerHTML = `<h2>${stateData.name}</h2><p><img src="./assets/svg/capital.svg"><strong>Capital:</strong> ${stateData.capital}</p><p><img src="./assets/svg/population.svg"><strong>Population:</strong> ${stateData.population}</p>`;
+                infoBox.innerHTML = `<span class="exit">x</span><h2>${stateData.name}</h2><p><img src="./assets/svg/capital.svg"><strong>Capital:</strong> ${stateData.capital}</p><p><img src="./assets/svg/population.svg"><strong>Population:</strong> ${stateData.population}</p>`;
             } else {
                 infoBox.innerHTML = `<h2>No additional info</h2>`;
             }
         });
     });
+
+    document.body.addEventListener('click', (event) => {
+        if (event.target.className == 'exit') {
+            infoBox.style.display = 'none';
+        }
+    })
 });

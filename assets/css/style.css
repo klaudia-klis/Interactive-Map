@@ -1,3 +1,9 @@
+.states-map-container {
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+}
+
 .state {
     fill: #274f5c;
 }
@@ -13,11 +19,22 @@
     top: 10px;
     right: 10px;
     padding: 10px;
-    border: 1px solid 1px solid #e7e7e7;
+    border: 1px solid #e7e7e7;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
     border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+    .info-box {
+        position: unset;
+        margin: 0 auto;
+    }
+
+    .states-map-container {
+        width: 100vw;
+    }
 }
 
 .info-box h2 {
@@ -41,4 +58,15 @@
     text-transform: uppercase;
     font-size: 13px;
     line-height: 13px;
+}
+
+.exit {
+    float: left;
+    border: 0.5px solid;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    line-height: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
 }
