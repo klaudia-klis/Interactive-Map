@@ -2,6 +2,7 @@
     width: 90vw;
     display: flex;
     justify-content: center;
+    height: 90vh;
 }
 
 .state {
