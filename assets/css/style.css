@@ -81,3 +81,5 @@
     z-index: 1000;
     pointer-events: none;
 }
+
+.borders {stroke:#ffffff; stroke-width:0.2}
